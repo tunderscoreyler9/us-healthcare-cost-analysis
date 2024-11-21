@@ -52,6 +52,7 @@ ipython_config.py
 *.xlsx
 *.db
 *.sqlite
+*.rtf
 
 # OS generated files
 .DS_Store
