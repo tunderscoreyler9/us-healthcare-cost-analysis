@@ -14,8 +14,6 @@ import numpy as np
 #     return df
 # src/data_loader.py
 
-import pandas as pd
-
 def load_and_clean_data(file_path, skip_rows=2, row_limit=None):
     """
     Load and clean healthcare spending data.
