@@ -1,138 +1,224 @@
-# US Healthcare Cost Analysis 1991-2020
+# US Healthcare Cost Analysis: 30-Year Spending Evolution (1991-2020)
 
-## Objective
-To analyze longitudinal healthcare cost trends across U.S. states from 1991 to 2020, identify long-term cost disparities, and understand the evolution of healthcare spending patterns across different regions of the United States.
+## Project Overview
+This project analyzes healthcare spending trends across U.S. states over three decades, examining regional patterns, cost disparities, and spending evolution. The analysis combines data from the Kaiser Family Foundation (KFF) for four key years (1991, 2000, 2010, 2020) to provide insights into long-term healthcare cost dynamics.
 
-## Questions Explored
-- How have healthcare costs per capita evolved across different states over three decades?
-- Which states consistently show highest and lowest healthcare costs?
-- What regional patterns emerge in healthcare spending over time?
-- How has the distribution of healthcare spending changed between 1991 and 2020?
+## Prerequisites
 
-## Key Findings
-- Analysis of healthcare spending per capita across all US states for four key years (1991, 2000, 2010, 2020).
-- Identification of long-term regional cost variations.
-- Tracking of state-by-state spending evolution.
-- Analysis of growth rates and spending patterns.
-- Cross-temporal comparisons of healthcare costs.
+### Python Installation
+1. **Install Python** (Version 3.8 or higher recommended):
+   - Visit [python.org](https://www.python.org/downloads/)
+   - Download the appropriate version for your OS.
+   - During installation, check "Add Python to PATH".
+   - Verify installation by opening terminal/command prompt and typing:
+     ```bash
+     python --version
+     ```
 
-## Project Structure
-```shell
-healthcare_analysis/
-│
-├── data/                                # Data storage
-│   ├── raw/                            # Original downloaded files
-│   │   ├── kff_healthcare_spending_per_capita_1991.csv
-│   │   ├── kff_healthcare_spending_per_capita_2000.csv
-│   │   ├── kff_healthcare_spending_per_capita_2010.csv
-│   │   └── kff_healthcare_spending_per_capita_2020.csv
-│   └── processed/                      # Cleaned and processed datasets
-│
-├── notebooks/                          # Jupyter notebooks for analysis
-│   ├── 01_data_loading.ipynb         # Data loading and cleaning
-│   ├── 02_exploratory_analysis_2020.ipynb         # Analysis of 2020 data
-│   ├── 02_exploratory_analysis_2010         # Analysis of 2010 data
-│   ├── 02_exploratory_analysis_2000         # Analysis of 2000 data
-│   ├── 02_exploratory_analysis_1991     # Analysis of 1991 data
-│   └── 06_complete_comparison.ipynb   # Cross-temporal analysis
-│
-├── src/                               # Python source code
-│   ├── __init__.py
-│   ├── data/                         # Data handling modules
-│   │   ├── data_loader.py           # Data loading functions
-│   └─ analysis/                    # Analysis modules
-│       └── metrics.py               # Analysis metrics
-│
-└── README.md                         # Project documentation
+2. **Text Editor/IDE** (Choose one):
+   - VSCode (Recommended): [Download](https://code.visualstudio.com/)
+   - PyCharm: [Download](https://www.jetbrains.com/pycharm/)
+   - Jupyter Lab: Will be installed with requirements.
 
+### Package Management
+1. **Understanding Python Packages**:
+   - Packages are collections of Python modules.
+   - They extend Python's functionality for data analysis.
+   - Key packages in this project:
+     - `pandas`: Data manipulation and analysis.
+     - `numpy`: Numerical computations.
+     - `matplotlib` & `seaborn`: Data visualization.
+     - `jupyter`: Interactive notebook environment.
+     - `statsmodels`: Statistical analyses.
 
-## Data Sources
-- **Kaiser Family Foundation (KFF) State Health Facts**
-- Datasets: Healthcare Spending per Capita by State for:
-  - 1991
-  - 2000
-  - 2010
-  - 2020
+2. **Virtual Environment**:
+   ```bash
+   # Create virtual environment
+   python -m venv venv
 
-## Analysis Components
-1. **Individual Year Analyses** (Notebooks 02-05)
-   - Year-specific data cleaning and preparation.
-   - Basic statistical summaries.
-   - Regional analysis.
-   - State rankings and comparisons.
-   - Cross-regional comparisons.
-   - Temporal changes in regional patterns.
-   - Regional variance analysis.
+   # Activate virtual environment
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
 
-2. **Longitudinal Comparison** (Notebook 06)
-   - 30-year trend analysis.
-   - Growth rate calculations.
-   - Cross-temporal patterns.
-   - Regional evolution.
+3. **Install required packages**:
 
-## Key Visualizations
-- Time series plots of spending trends.
-- Regional distribution box plots.
-- State-by-state comparison bar plots.
-- Growth rate analysis charts.
-- Cross-temporal comparison visualizations.
-
-## Requirements
-Required Python packages:
-``` python
-pandas>=2.0.0 numpy>=1.24.0 matplotlib>=3.7.0 seaborn>=0.12.0 jupyter>=1.0.0
-```
-
-
-## Setup and Installation
-1. Clone the repository:
-`https://github.com/tunderscoreyler9/us-healthcare-cost-analysis.git`
-
-2. Create and activate a virtual environment:
-``` python
-# To create the venv, type:
-python -m venv venv 
-
-# To activate the venv:
-source venv/bin/activate 
-
-# On Windows, use this to activate your venv
-venv\Scripts\activate
-```
-
-
-3. Install required packages:
 ``` python
 pip install -r requirements.txt
 ```
 
+### Project Structure:
+``` shell
+healthcare_analysis/
+│
+├── data/                              
+│   ├── raw/                          # Original KFF datasets
+│   │   ├── kff_healthcare_spending_per_capita_1991.csv
+│   │   ├── kff_healthcare_spending_per_capita_2000.csv
+│   │   ├── kff_healthcare_spending_per_capita_2010.csv
+│   │   └── kff_healthcare_spending_per_capita_2020.csv
+│   └── processed/                    # Cleaned datasets
+│
+├── notebooks/                        # Analysis notebooks
+│   ├── 01_data_loading.ipynb        # Initial data preparation
+│   ├── 02_exploratory_analysis_2020.ipynb
+│   ├── 02_exploratory_analysis_2010.ipynb
+│   ├── 02_exploratory_analysis_2000.ipynb
+│   ├── 02_exploratory_analysis_1991.ipynb
+│   └── 06_complete_comparison.ipynb # Cross-temporal analysis
+│
+├── src/                             # Source code
+│   ├── data/                       
+│   │   └── data_loader.py          # Data loading utilities
+│   └── analysis/
+│       └── metrics.py              # Analysis functions
+│
+├── requirements.txt                 # Package dependencies
+└── README.md                       # Project documentation
+```
 
-## Usage
-1. Start with individual year analyses (Notebooks 02-05).
-2. Explore regional patterns in these notebooks.
-3. Examine complete temporal comparison (Notebook 06).
+### Installation and Setup
+1. Clone the Repository:
+``` python 
+git clone https://github.com/tunderscoreyler9/us-healthcare-cost-analysis.git
+cd us-healthcare-cost-analysis
+```
 
-## Results
-The analysis reveals:
-- Significant growth in healthcare spending across all states from 1991 to 2020.
-- Persistent regional disparities in healthcare costs.
-- Varying growth rates across different regions and states.
-- Evolution of healthcare spending distribution over time.
+2. Environment Setup:
+``` python
+# Create virtual environment
+python -m venv venv
 
-## Future Work
-Potential areas for expansion:
+# Activate virtual environment
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 3. Data Preparation
+- Place the KFF dataset files in the `data/raw/` directory.
+- Ensure files are named correctly according to their years.
+- Run the data loading notebook first to prepare datasets.
+
+### Analysis Components
+
+#### Individual Year Analyses
+Each year-specific notebook (1991, 2000, 2010, 2020) contains:
+- Basic statistical summaries.
+- Regional analysis.
+- Distribution analysis.
+- Outlier detection.
+- Visualization suite.
+- Statistical significance testing.
+
+#### Longitudinal Analysis
+The complete comparison notebook includes:
+- 30-year trend analysis.
+- Growth rate calculations.
+- Cross-temporal patterns.
+- Regional evolution studies.
+
+### Key Features
+
+#### Data Processing
+- Automated data cleaning and standardization.
+- Regional classification system.
+- Outlier detection and handling.
+- Missing value management.
+
+#### Statistical Analysis
+- Descriptive statistics.
+- Inferential testing.
+- Time series analysis.
+- Regional comparisons.
+
+#### Visualization Suite
+- Time series plots.
+- Distribution analysis.
+- Regional comparisons.
+- Growth rate visualizations.
+
+### Usage Guide
+
+#### 1. Initial Setup
+```bash
+# Navigate to project directory
+cd us-healthcare-cost-analysis
+
+# Activate virtual environment
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Launch Jupyter
+jupyter lab
+```
+
+### 2. Running the Analysis
+1. Start with `01_data_loading.ipynb`.
+2. Proceed through year-specific analyses (02-05).
+3. Complete with longitudinal comparison (06).
+
+### 3. Modifying the Analysis
+- Parameters can be adjusted in `src/analysis/metrics.py`.
+- Regional definitions can be modified in notebooks.
+- Visualization settings can be customized in plot commands.
+
+### Results and Findings
+Detailed findings are available in each notebook, including:
+- Regional spending patterns.
+- Growth rate analysis.
+- Statistical significance tests.
+- Trend visualizations.
+
+### Troubleshooting
+
+#### Common Issues and Solutions
+
+**Package Installation Errors**:
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt --no-cache-dir
+```
+
+### Jupyter Notebook Issues
+```bash
+jupyter notebook clean
+jupyter lab build
+```
+
+### Data Loading Errors
+- Verify file paths in `data_loader.py`.
+- Check CSV file formatting.
+- Ensure correct file names.
+
+### Contributing
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit changes.
+4. Push to the branch.
+5. Create a Pull Request.
+
+### Future Development
 - Integration with demographic data.
-- Policy impact analysis across time periods.
-- Healthcare outcome correlation analysis.
+- Policy impact analysis.
+- Healthcare outcome correlation.
 - Economic factor integration.
+- Interactive dashboard development.
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
+### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
-- Data provided by Kaiser Family Foundation.
-- Analysis inspired by healthcare policy research, KFF, and my family.
-- Project completed as part of data analysis coursework.
+### Acknowledgments
+- Kaiser Family Foundation for data provision.
+- Healthcare policy research community.
+- Python data science community.
+- Family support and inspiration.
+
+### Contact
+For questions or collaboration:
+- **GitHub**: [tunderscoreyler9](https://github.com/tunderscoreyler9)
+- **Project Issues**: [Issue Tracker](https://github.com/tunderscoreyler9/us-healthcare-cost-analysis/issues)
