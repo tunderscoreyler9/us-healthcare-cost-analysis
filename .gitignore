@@ -47,7 +47,6 @@ ipython_config.py
 
 # Data files
 *.csv
-!kff_healthcare_spending_per_capita_2020.csv
 *.xls
 *.xlsx
 *.db
