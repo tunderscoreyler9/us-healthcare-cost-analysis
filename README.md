@@ -101,9 +101,9 @@ pip install -r requirements.txt
 ```
 
 ### 3. Data Preparation
-- Place the KFF dataset files in the `data/raw/` directory.
-- Ensure files are named correctly according to their years.
-- Run the data loading notebook first to prepare datasets.
+- The KFF dataset files are in the `data/raw/` directory.
+- Files are named correctly according to their years.
+- Run the data loading notebook (`01_data_loading.ipynb`) first to prepare datasets.
 
 ### Analysis Components
 
