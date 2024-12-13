@@ -29,7 +29,7 @@ healthcare_analysis/
 │   └── processed/                      # Cleaned and processed datasets
 │
 ├── notebooks/                          # Jupyter notebooks for analysis
-│   ├── 01_data_laoding.ipynb         # Data loading and cleaning
+│   ├── 01_data_loading.ipynb         # Data loading and cleaning
 │   ├── 02_exploratory_analysis_2020.ipynb         # Analysis of 2020 data
 │   ├── 02_exploratory_analysis_2010         # Analysis of 2010 data
 │   ├── 02_exploratory_analysis_2000         # Analysis of 2000 data
