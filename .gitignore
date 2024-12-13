@@ -46,7 +46,6 @@ ipython_config.py
 .idea_modules/
 
 # Data files
-*.csv
 *.xls
 *.xlsx
 *.db
